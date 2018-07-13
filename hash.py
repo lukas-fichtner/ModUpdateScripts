@@ -13,8 +13,9 @@ f.write('[')
 files = []
 for root, dirnames, filenames in os.walk(root):
         for filename in fnmatch.filter(filenames, '**'):
-                if os.path.isfile(os.path.join(root, filename)):
-                        files.append(os.path.join(root, filename))
+                if not filename.endswith(('.zsync')):
+                        if os.path.isfile(os.path.join(root, filename)):
+                                files.append(os.path.join(root, filename))
 
 for x in files:
         filecount+=1
