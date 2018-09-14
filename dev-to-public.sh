@@ -5,9 +5,9 @@
 
 #update dev folder
 echo [starte mod update]
-echo [sync dev ordner mit public ordner]
-rm -r /home/webstorage/dwcentral/UnityLife/dev/modpack/@Unity_Life
-cp -r /home/webstorage/dwcentral/UnityLife/public/modpack/@Unity_Life /home/webstorage/dwcentral/UnityLife/dev/modpack
+echo [sync public ordner mit dev ordner]
+rm -r /home/webstorage/dwcentral/UnityLife/public/modpack/@Unity_Life
+cp -r /home/webstorage/dwcentral/UnityLife/dev/modpack/@Unity_Life /home/webstorage/dwcentral/UnityLife/public/modpack
 
 #Permissions
 chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/
@@ -33,9 +33,6 @@ cd /home/Sync
 #update PUB
 echo [starte Public Sync hash]
 java -jar ArmA3Sync.jar -BUILD Unity-LifePUB
-#update DEV
-echo [starte DEV Sync hash]
-java -jar ArmA3Sync.jar -BUILD Unity-LifeDEV
 
 #END
 echo [DONE]

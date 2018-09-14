@@ -1,11 +1,11 @@
 #!/bin/bash
-#Mod Progress  v0.2
+#Mod Progress  v0.3
 #Script by Xedon 07.04.2017
-#last update 30.06.2018
+#last update 14.09.2018
 
 #Permissions
-chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/dev/modpack/
-chmod -R 775 /home/webstorage/dwcentral/UnityLife/dev/modpack/
+chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/
+chmod -R 775 /home/webstorage/dwcentral/UnityLife/
 
 #Run A3sync
 echo [ArmaSync Hash DEV Folder]
@@ -18,4 +18,3 @@ echo [DONE]
 #zeige Datenträger
 echo [INFO] Speicherplatz / Datenträger:
 df -h
-
