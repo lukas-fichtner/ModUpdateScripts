@@ -1,7 +1,7 @@
 #!/bin/bash
-#Mod Progress  v0.2
+#Mod Progress  v0.2.4
 #Script by Xedon 07.04.2017
-#last update 30.06.2018
+#last update 21.09.2018
 
 #update dev folder
 echo [starte mod update]

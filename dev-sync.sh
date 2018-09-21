@@ -1,7 +1,7 @@
 #!/bin/bash
-#Mod Progress  v0.3
+#Mod Progress  v0.2.4
 #Script by Xedon 07.04.2017
-#last update 14.09.2018
+#last update 21.09.2018
 
 #Permissions
 chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/

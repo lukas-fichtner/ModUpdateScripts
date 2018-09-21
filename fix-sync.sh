@@ -3,12 +3,6 @@
 #Script by Xedon 07.04.2017
 #last update 21.09.2018
 
-#update dev folder
-echo [starte mod update]
-echo [sync public ordner mit dev ordner]
-rm -r /home/webstorage/dwcentral/UnityLife/public/modpack/@Unity_Life
-cp -r /home/webstorage/dwcentral/UnityLife/dev/modpack/@Unity_Life /home/webstorage/dwcentral/UnityLife/public/modpack
-
 #Permissions
 chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/
 chmod -R 775 /home/webstorage/dwcentral/UnityLife/
@@ -22,6 +16,10 @@ cd /home/Sync
 echo [starte Public Sync hash]
 java -jar ArmA3Sync.jar -BUILD Unity-LifePUB
 
+#update DEV
+echo [starte DEV Sync hash]
+java -jar ArmA3Sync.jar -BUILD Unity-LifeDEV
+
 #lösche alten CloudFlare Cache
 echo [lösche alten CloudFlare Cache]
 curl -X POST "https://api.cloudflare.com/client/v4/zones/733a8f8dc1cf4a08b4f085b60a74977c/purge_cache" \
@@ -33,7 +31,3 @@ echo [alter CloudFlare Cache wurde gelöscht]
 
 #END
 echo [DONE]
-
-#zeige Datenträger
-echo [INFO] Speicherplatz / Datenträger:
-df -h
