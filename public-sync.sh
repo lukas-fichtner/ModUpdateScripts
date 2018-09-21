@@ -13,29 +13,27 @@ cp -r /home/webstorage/dwcentral/UnityLife/public/modpack/@Unity_Life /home/webs
 chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/
 chmod -R 775 /home/webstorage/dwcentral/UnityLife/
 chmod -R 775 /home/webstorage/dwcentral/ParadiseLife/
-chown -R launcherusync:www-data /home/webstorage/dwcentral/ParadiseLife/
-
-#Run Hash-Script for Mod Update
-echo [update CC Hashlist]
-cd /home/Sync/scripts/
-sudo python hash.py /home/webstorage/dwcentral/UnityLife/public/modpack/@Unity_Life/ hashlist.json
-
-#delete old updatehashlist
-rm /home/webstorage/dwcentral/ParadiseLife/files/hashlist.json
-
-#move updatehashlist to webserver
-chown unitylife:www-data hashlist.json
-mv hashlist.json /home/webstorage/dwcentral/ParadiseLife/files/
 
 #Run A3sync
 echo [starte Arma Sync hash]
 cd /home/Sync
+
 #update PUB
 echo [starte Public Sync hash]
 java -jar ArmA3Sync.jar -BUILD Unity-LifePUB
+
 #update DEV
 echo [starte DEV Sync hash]
 java -jar ArmA3Sync.jar -BUILD Unity-LifeDEV
+
+#lösche alten CloudFlare Cache
+echo [lösche alten CloudFlare Cache]
+curl -X POST "https://api.cloudflare.com/client/v4/zones/733a8f8dc1cf4a08b4f085b60a74977c/purge_cache" \
+     -H "X-Auth-Email: stephan@imglol.de" \
+     -H "X-Auth-Key: 1b0eee5b2b03e9c34e127f61d16f30169e529" \
+     -H "Content-Type: application/json" \
+     --data '{"purge_everything":true}'
+echo [alter CloudFlare Cache wurde gelöscht]
 
 #END
 echo [DONE]
