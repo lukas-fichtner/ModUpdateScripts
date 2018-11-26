@@ -1,16 +1,15 @@
 #!/bin/bash
-#Mod Progress  v0.2.4
+#Mod Progress  v0.2.5
 #Script by Xedon 07.04.2017
-#last update 21.09.2018
+#last update 25.11.2018
 
 #Permissions
 chown -R launcherusync:www-data /home/webstorage/dwcentral/UnityLife/
 chmod -R 775 /home/webstorage/dwcentral/UnityLife/
-chmod -R 775 /home/webstorage/dwcentral/ParadiseLife/
 
 #Run A3sync
 echo [starte Arma Sync hash]
-cd /home/Sync
+cd /opt/sync
 
 #update PUB
 echo [starte Public Sync hash]
