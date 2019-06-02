@@ -1,9 +1,21 @@
 #!/bin/bash
-#Mod Progress  v0.2.7
+#Mod Progress  v0.2.8
 #Script by Xedon 07.04.2017
-#last update 26.05.2019
+#last update 02.06.2019
 
 echo [starte mod update]
+
+#Permissions
+sudo chown -R launcherusync:www-data /home/webstorage/dwcentral/ParadiseRPG/
+sudo chmod -R 775 /home/webstorage/dwcentral/ParadiseRPG/
+
+#Run A3sync
+echo [starte Arma Sync hash]
+cd /opt/sync 
+
+#update PUB
+echo [starte Public Sync hash]
+sudo java -jar ArmA3Sync.jar -BUILD ParadiseRPG-PUB
 
 #Permissions
 sudo chown -R launcherusync:www-data /home/webstorage/dwcentral/ParadiseRPG/
