@@ -5,7 +5,7 @@
 
 #Run A3sync
 echo [starte Arma Sync hash]
-cd /opt/sync 
+cd /opt/sync
 
 #update PUB
 echo [starte Public Sync hash]
@@ -17,9 +17,9 @@ sudo chmod -R 775 /home/webstorage/dwcentral/ParadiseRPG/
 
 #lösche alten CloudFlare Cache
 echo [lösche alten CloudFlare Cache]
-curl -X POST "https://api.cloudflare.com/client/v4/zones/dca3906acf2be1536920febdc174b235/purge_cache" \
-     -H "X-Auth-Email: quitscope@outlook.de" \
-     -H "X-Auth-Key: e2a14fddc00d0e5741221f5694db32f369239" \
+curl -X POST "https://api.cloudflare.com/client/v4/zones/<enter-your-zone-id-here>/purge_cache" \
+     -H "X-Auth-Email: <enter-your-email-here>" \
+     -H "X-Auth-Key: <enter-your-key-here>" \
      -H "Content-Type: application/json" \
      --data '{"purge_everything":true}'
 echo [alter CloudFlare Cache wurde gelöscht]
